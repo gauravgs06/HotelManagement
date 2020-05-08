@@ -16,6 +16,7 @@ $ pipenv shell
 
 $ python manage.py migrate
 $ python manage.py collectstatic
+$ python load-database.py
 
 $ python manage.py runserver 0.0.0.0:5000
 ```
