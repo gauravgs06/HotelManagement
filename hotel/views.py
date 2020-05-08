@@ -3,5 +3,5 @@ from .models import Hotel
 
 # Create your views here.
 def listing(request):
-    hotels = Hotel.objects.all()
+    hotels = Hotel.objects.all()[:12]
     return render(request, 'hotels/listing.html', { "hotels": hotels})
