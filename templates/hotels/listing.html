@@ -40,30 +40,20 @@
                 </div>
             </div>
         </div>
-        {% comment %} {% for i in rows %} {% endcomment %}
         <div class="row">
+        {% for hotel in hotels %}
             <div class="col-sm-12 col-md-4 col-lg-3 pb-3">
                 <div class="card">
                     <img src={% static 'images/hotel-temp.jpg' %} class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Vendor Name</h5>
-                        <h6 class="card-text">City</h6>
-                        <h6 class="card-text">Venue Type</h6>
+                        <h5 class="card-title">{{ hotel.name }}</h5>
+                        <h6 class="card-text">{{ hotel.city }}</h6>
+                        <h6 class="card-text">{{ hotel.venue_type }}</h6>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4 col-lg-3 pb-3">
-                <div class="card">
-                    <img src={% static 'images/hotel-temp.jpg' %} class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Vendor Name</h5>
-                        <h6 class="card-text">City</h6>
-                        <h6 class="card-text">Venue Type</h6>
-                    </div>
-                </div>
-            </div>
+        {% endfor %}
         </div>
-        {% comment %} {% endfor %} {% endcomment %}
 
         <nav aria-label="page navigation" style="float:right" class="mt-5">
             <ul class="pagination">
