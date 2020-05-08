@@ -1,0 +1,75 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block 'title' %}
+    Hotel Listing
+{% endblock %}
+{% block 'style' %}
+    <link href={% static 'hotels/css/style.css' %} rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block 'content' %} 
+    <h1 class="pg_heading">Hotel Listing</h1>
+    <div class="container">
+        <div class="form-group pb-2">
+            <label>Filter</label>
+            <div class="row">
+                <div class="col-sm-12 col-lg py-2">
+                    <select id="inputState" class="form-control">
+                        <option selected disabled>City</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-lg py-2">
+                    <select id="inputState" class="form-control">
+                        <option selected disabled>Veg Price</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-lg py-2">
+                    <select id="inputState" class="form-control">
+                        <option selected disabled>Venue Type</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-lg-4 py-2">
+                    <select id="inputState" class="form-control">
+                        <option selected disabled>Maximum Capacity</option>
+                        <option>...</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        {% comment %} {% for i in rows %} {% endcomment %}
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-3 pb-3">
+                <div class="card">
+                    <img src={% static 'images/hotel-temp.jpg' %} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Vendor Name</h5>
+                        <h6 class="card-text">City</h6>
+                        <h6 class="card-text">Venue Type</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3 pb-3">
+                <div class="card">
+                    <img src={% static 'images/hotel-temp.jpg' %} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Vendor Name</h5>
+                        <h6 class="card-text">City</h6>
+                        <h6 class="card-text">Venue Type</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% comment %} {% endfor %} {% endcomment %}
+
+        <nav aria-label="page navigation" style="float:right" class="mt-5">
+            <ul class="pagination">
+                <li class="page-item mx-2"><a class="page-link" href="#">Back</a></li>
+                <li class="page-item mx-2"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}

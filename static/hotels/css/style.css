@@ -1,0 +1,8 @@
+.pg_heading{
+    text-align: center;
+}
+
+.f-row{
+    display: flex;
+    justify-content: space-evenly;
+}
