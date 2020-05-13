@@ -7,5 +7,5 @@ class Vendor(models.Model):
     name = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
     venue_type = models.CharField(max_length=200)
-    veg_price = models.FloatField(max_length=10, default=0)
+    veg_price = models.FloatField(max_length=10, default=0, null=True)
     max_capacity = models.IntegerField(default=0, null=True)
