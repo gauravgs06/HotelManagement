@@ -15,25 +15,29 @@
             <label>Filter</label>
             <div class="row">
                 <div class="col-sm-12 col-lg py-2">
-                    <select id="inputState" class="form-control">
-                        <option selected disabled>City</option>
-                        <option>...</option>
-                    </select>
+                    <form>
+                        <select id="inputCity" class="form-control">
+                            <option selected disabled>City</option>
+                            {% for city in city_list %}
+                                <option value={{ city }}>{{ city }}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
                 </div>
                 <div class="col-sm-12 col-lg py-2">
-                    <select id="inputState" class="form-control">
+                    <select id="inputPrice" class="form-control">
                         <option selected disabled>Veg Price</option>
                         <option>...</option>
                     </select>
                 </div>
                 <div class="col-sm-12 col-lg py-2">
-                    <select id="inputState" class="form-control">
+                    <select id="inputVenueType" class="form-control">
                         <option selected disabled>Venue Type</option>
                         <option>...</option>
                     </select>
                 </div>
                 <div class="col-sm-12 col-lg-4 py-2">
-                    <select id="inputState" class="form-control">
+                    <select id="inputMaxCap" class="form-control">
                         <option selected disabled>Maximum Capacity</option>
                         <option>...</option>
                     </select>
@@ -59,15 +63,19 @@
             <ul class="pagination">
                 <li class="page-item mx-2">
                 {% if pageObjects.has_previous %}
-                    <a class="page-link" href="{% url 'listing' pageObjects.previous_page_number %}">Back</a>
+                    <a class="page-link" href="{% url 'listing' %}?page={{ pageObjects.previous_page_number }}&{{ params }}">Back</a>
                 {% endif %}
                 </li>
                 <li class="page-item mx-2">
                 {% if pageObjects.has_next %}
-                    <a class="page-link" href="{% url 'listing' pageObjects.next_page_number %}">Next</a>
+                    <a class="page-link" href="{% url 'listing' %}?page={{ pageObjects.next_page_number }}&{{ params }}">Next</a>
                 {% endif %}
                 </li>
             </ul>
         </nav>
     </div>
+{% endblock %}
+
+{% block 'script' %}
+    <script src="{% static 'hotels/js/main.js' %}"></script>
 {% endblock %}
