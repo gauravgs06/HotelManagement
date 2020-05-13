@@ -10,7 +10,7 @@ from hotel.models import Hotel
 
 wb = load_workbook(filename='Dummy Listing.xlsx')
 sheet = wb['Sheet1']
-for row in range(2, 20):
+for row in range(2, 200):
     h = Hotel()
     h.name = sheet['{}{}'.format('A', row)].value
     h.city = sheet['{}{}'.format('F', row)].value
