@@ -31,6 +31,3 @@ def listing(request):
     params = gt.urlencode()
     city_list = Vendor.objects.values_list('city',flat=True).order_by('city').distinct() 
     return render(request, 'hotels/listing.html', {"pageObjects": pageObject, 'params': params, 'city_list': city_list})
-
-def get_city_list():
-    return Vendor.objects.distinct('city')
